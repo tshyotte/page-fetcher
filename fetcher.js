@@ -6,7 +6,7 @@ const path = process.argv.slice(2)[1]; // where to save a file
 
 const request = http.get(url, function(response) {
     if (response.statusCode === 200) {
-        var file = fs.createWriteStream(path);
+        let file = fs.createWriteStream(path);
         response.pipe(file);
     }
     request.setTimeout(60000, function() { // if after 60s 
